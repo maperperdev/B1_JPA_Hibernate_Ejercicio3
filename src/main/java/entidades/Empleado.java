@@ -49,8 +49,10 @@ public class Empleado implements Serializable{
 	@Column(name = "APELLIDOS")
        private String apellidos;
 	
-	//3.1 Asociación unidirecciona sobre Empleado y Dirección
-	
+	//3.1 Asociación unidireccional sobre Empleado y Dirección
+	//para añadir restricción hay que especificar, unique=true,
+	//nullable = false, updatable=false
+	//si no con anotar la restricción en table es suficiente
 	//
 	@OneToOne
 	@JoinColumn(name="DIRECCION_FK", unique=true, nullable=false, updatable=false)
